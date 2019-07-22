@@ -1,0 +1,42 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class yoshiPlayer : MonoBehaviour
+{
+    // Start is called before the first frame update
+
+    public Rigidbody2D body;
+    public float walkingSpeed; public Camera MainCamera; //Asignar el main camera en el inspector
+    private Vector2 screenBounds;
+    private float objectWidth;
+    private float objectHeight;
+
+    void Start()
+    {
+        screenBounds = MainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, MainCamera.transform.position.z));
+        objectWidth = transform.GetComponent<SpriteRenderer>().bounds.extents.x; //extents = size of width / 2
+        objectHeight = transform.GetComponent<SpriteRenderer>().bounds.extents.y; //extents = size of height / 2
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        transform.Translate(Time.deltaTime*walkingSpeed,0,0);//permite al jugador moverse constamente 
+
+        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        { // x-axis movement
+            body.velocity += 10f * Vector2.up;
+        }
+    }
+
+    // Update is called once per frame
+    // player no puede sobrepasar el tamano de la vista de la camara
+    void LateUpdate()
+    {
+        Vector3 viewPos = transform.position;
+        viewPos.x = Mathf.Clamp(viewPos.x, screenBounds.x * -1 + objectWidth, screenBounds.x - objectWidth);// calcula x mediante el tamano del player
+        viewPos.y = Mathf.Clamp(viewPos.y, screenBounds.y * -1 + objectHeight, screenBounds.y - objectHeight);
+        transform.position = viewPos;
+    }
+}
