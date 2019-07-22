@@ -16,47 +16,29 @@ public class ShipController : MonoBehaviour
     {
         if (Input.GetKey("up"))
         {
-            if (gameObject.transform.localScale.x < 1)
-            {
-                gameObject.transform.eulerAngles = new Vector3(0, 0, -90);
-                gameObject.transform.Translate(-5 * Time.deltaTime, 0, 0);
-            }
-            else
-            {
-                gameObject.transform.eulerAngles = new Vector3(0, 0, 90);
-                gameObject.transform.Translate(5 * Time.deltaTime, 0, 0);
-            }
+            gameObject.transform.Translate(0, 5 * Time.deltaTime, 0);
         }
         else if (Input.GetKey("down"))
         {
-            if (gameObject.transform.localScale.x < 1)
-            {
-                gameObject.transform.eulerAngles = new Vector3(0, 0, 90);
-                gameObject.transform.Translate(-5 * Time.deltaTime, 0, 0);
-            }
-            else
-            {
-                gameObject.transform.eulerAngles = new Vector3(0, 0, -90);
-                gameObject.transform.Translate(5 * Time.deltaTime, 0, 0);
-            }
+            gameObject.transform.Translate(0, -5 * Time.deltaTime, 0);
         }
-        else if (Input.GetKey("left"))
+        /*else if (Input.GetKey("left"))
         {
             if (gameObject.transform.eulerAngles.z != 0)
             {
                 gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
             }
-            gameObject.transform.localScale = new Vector3(-1F, 1F, 1F);
+            gameObject.transform.localScale = new Vector3(-1.5F, 1.5F, 1.5F);
             gameObject.transform.Translate(-5 * Time.deltaTime, 0, 0);
-        }
-        else if (Input.GetKey("right"))
+        }*/
+        /*else if (Input.GetKey("right"))
         {
             if (gameObject.transform.eulerAngles.z != 0)
             {
                 gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
             }
-            gameObject.transform.localScale = new Vector3(1F, 1F, 1F);
+            gameObject.transform.localScale = new Vector3(1.5F, 1.5F, 1.5F);
             gameObject.transform.Translate(5 * Time.deltaTime, 0, 0);
-        }
+        }*/
     }
 }
