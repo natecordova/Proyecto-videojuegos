@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ShipController : MonoBehaviour
 
 {
-    public float speedX;
+    // public float speedX;
     public float speedY;
 
     // Start is called before the first frame update
@@ -19,7 +19,7 @@ public class ShipController : MonoBehaviour
     void Update()
     {
         // Movimiento automático en eje X
-        gameObject.transform.Translate(speedX * Time.deltaTime, 0, 0);
+        // gameObject.transform.Translate(speedX * Time.deltaTime, 0, 0);
 
         if (Input.GetKey("up"))
         {
