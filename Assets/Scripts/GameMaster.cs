@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour 
 {
+
+    private static GameMaster instance;
+    public Vector2 lastCheckPointPos;
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -14,5 +17,18 @@ public class GameMaster : MonoBehaviour
     void Update()
     {
         pointsGems.text = ("Gems: " + gems);
+    }
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(instance);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

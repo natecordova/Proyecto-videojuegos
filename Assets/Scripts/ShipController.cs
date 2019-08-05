@@ -14,6 +14,7 @@ public class ShipController : MonoBehaviour
     void Start()
     {
         gameMaster = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
+        transform.position = gameMaster.lastCheckPointPos;
     }
 
     // Update is called once per frame
@@ -52,7 +53,7 @@ public class ShipController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.transform.tag == "spikes") {
-            SceneManager.LoadScene("level 1");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             Debug.Log("collission");
         }
     }
