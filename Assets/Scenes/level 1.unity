@@ -1387,6 +1387,7 @@ GameObject:
   - component: {fileID: 1033467196}
   - component: {fileID: 1033467198}
   - component: {fileID: 1033467197}
+  - component: {fileID: 1033467199}
   m_Layer: 0
   m_Name: 10
   m_TagString: spikes
@@ -1482,6 +1483,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1033467199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033467195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0142be34cc57f1044ae6ddbeb4bfe826, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x_speed: 44
+  x_bound: -45
 --- !u!1 &1214720415
 GameObject:
   m_ObjectHideFlags: 0
@@ -2600,7 +2615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 263153f398684a34dbb080230363c368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  scroll_speed: 0.5
 --- !u!1 &1814987862
 GameObject:
   m_ObjectHideFlags: 0
