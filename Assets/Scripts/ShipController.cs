@@ -8,11 +8,12 @@ public class ShipController : MonoBehaviour
 {
     public float speedX;
     public float speedY;
+    private GameMaster gameMaster;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameMaster = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
     }
 
     // Update is called once per frame
@@ -53,6 +54,14 @@ public class ShipController : MonoBehaviour
         if (collision.transform.tag == "spikes") {
             SceneManager.LoadScene("level 1");
             Debug.Log("collission");
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("gems")) {
+            Destroy(collision.gameObject);
+            gameMaster.gems +=1;
         }
     }
 }
