@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    public float x_speed = 5f;
+    public float x_speed = 44f;
     public float x_bound = -45f;
     private float x_offset;
 
