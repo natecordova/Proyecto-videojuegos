@@ -8,11 +8,15 @@ public class ShipController : MonoBehaviour
 {
     // public float speedX;
     public float speedY;
+    private BaterryPoint point;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        point = GameObject.FindGameObjectWithTag("pointBatery").GetComponent<BaterryPoint>();
+       
+
     }
 
     // Update is called once per frame
@@ -55,4 +59,17 @@ public class ShipController : MonoBehaviour
             Debug.Log("collission");
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("battery"))
+        {
+            Destroy(collision.gameObject);
+            point.point += 1;
+        }
+    }
+
+
+
+
 }
