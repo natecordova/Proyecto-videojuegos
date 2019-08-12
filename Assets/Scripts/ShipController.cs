@@ -10,6 +10,7 @@ public class ShipController : MonoBehaviour
     public float speedY;
     // private BaterryPoint point;
     public int energyCounter = 0;
+    public int shieldCounter = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -58,8 +59,11 @@ public class ShipController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.tag == "obstacle") {
-            SceneManager.LoadScene("level_1");
-            Debug.Log("collission");
+            shieldCounter--;
+            if (shieldCounter == 0)
+            {
+                SceneManager.LoadScene("level_1");
+            }
         } else if (collision.transform.tag == "battery")
         {
             Destroy(collision.gameObject);
