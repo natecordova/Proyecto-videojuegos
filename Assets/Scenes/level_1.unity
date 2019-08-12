@@ -1629,7 +1629,7 @@ GameObject:
   - component: {fileID: 1210238627}
   - component: {fileID: 1210238629}
   m_Layer: 0
-  m_Name: Baterry
+  m_Name: Cell
   m_TagString: battery
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1672,7 +1672,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: c6a777e2459dc37489869ba21e0b1193, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8d14436fd04c76142bf0aae9ee2e1f6e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1690,12 +1690,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1210238626}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 57.8, y: -13, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 51.8, y: -5.3811426, z: 8.23281}
+  m_LocalScale: {x: 12.73272, y: 12.73272, z: 3.18318}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1867382212}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1210238629
 MonoBehaviour:
@@ -2966,7 +2966,7 @@ Transform:
   m_LocalScale: {x: 88.5, y: 40, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1774714250
 MonoBehaviour:
@@ -3102,6 +3102,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x_speed: 44
   x_bound: -45
+--- !u!1 &1867382211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1867382212}
+  m_Layer: 0
+  m_Name: EnergyCells
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1867382212
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867382211}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 63.260193, y: -8.428858, z: -8.23281}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1210238628}
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2094775378
 GameObject:
   m_ObjectHideFlags: 0
