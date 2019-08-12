@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - spikes
   - battery
+  - obstacle
   layers:
   - Default
   - TransparentFX

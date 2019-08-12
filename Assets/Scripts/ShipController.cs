@@ -8,15 +8,14 @@ public class ShipController : MonoBehaviour
 {
     // public float speedX;
     public float speedY;
-    private BaterryPoint point;
+    // private BaterryPoint point;
+    private int energyCounter = 0;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        point = GameObject.FindGameObjectWithTag("pointBatery").GetComponent<BaterryPoint>();
-       
-
+        // point = GameObject.FindGameObjectWithTag("pointBatery").GetComponent<BaterryPoint>();
     }
 
     // Update is called once per frame
@@ -54,22 +53,19 @@ public class ShipController : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.transform.tag == "spikes") {
-            SceneManager.LoadScene("level 1");
-            Debug.Log("collission");
-        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("battery"))
+        if (collision.transform.tag == "obstacle") {
+            SceneManager.LoadScene("level_1");
+            Debug.Log("collission");
+        } else if (collision.transform.tag == "battery")
         {
             Destroy(collision.gameObject);
-            point.point += 1;
+            energyCounter++;
+            Debug.Log("energy: " + energyCounter);
         }
     }
-
-
-
-
 }
