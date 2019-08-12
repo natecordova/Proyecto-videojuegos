@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 276ebe980f130ea42997d86c3eee7604
+guid: bf6f4442d8b0fc049a2afe91e4c8a1ff
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -51,7 +51,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -86,7 +86,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c1ceeeea77e4a5141b0fa1ae4bca9700
+    spriteID: 90fdc503959fdd74ba699ba7f6b8590e
     internalID: 0
     vertices: []
     indices: 
