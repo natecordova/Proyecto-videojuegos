@@ -7,15 +7,25 @@ public class ShipController : MonoBehaviour
 
 {
     // public float speedX;
-    public float speedY;
+    [SerializeField]
+    private float speedY;
     // private BaterryPoint point;
     public int energyCounter = 0;
     public int shieldCounter = 3;
+    [SerializeField]
+    private GameObject playerShot;
+    [SerializeField]
+    private Transform attackPoint;
+
+    public float shotTimer = 2f;
+    private float currentShotTimer;
+    private bool canShoot;
 
     // Start is called before the first frame update
     void Start()
     {
         // point = GameObject.FindGameObjectWithTag("pointBatery").GetComponent<BaterryPoint>();
+        currentShotTimer = shotTimer;
     }
 
     // Update is called once per frame
@@ -50,6 +60,7 @@ public class ShipController : MonoBehaviour
             gameObject.transform.localScale = new Vector3(1.5F, 1.5F, 1.5F);
             gameObject.transform.Translate(5 * Time.deltaTime, 0, 0);
         }*/
+        Shoot();
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
@@ -58,7 +69,7 @@ public class ShipController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "obstacle") {
+        if (collision.transform.tag == "obstacle" || collision.transform.tag == "enemyShot") {
             shieldCounter--;
             if (shieldCounter == 0)
             {
@@ -72,6 +83,25 @@ public class ShipController : MonoBehaviour
                 energyCounter++;
             }
             Debug.Log("energy: " + energyCounter);
+        }
+    }
+
+    void Shoot()
+    {
+        shotTimer += Time.deltaTime;
+        if (shotTimer > currentShotTimer)
+        {
+            canShoot = true;
+        }
+        if (Input.GetKeyDown("z"))
+        {
+            if (canShoot && energyCounter > 0)
+            {
+                canShoot = false;
+                shotTimer = 0f;
+                energyCounter--;
+                Instantiate(playerShot, attackPoint.position, Quaternion.identity);
+            }
         }
     }
 }
