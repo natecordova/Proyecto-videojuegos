@@ -11,7 +11,7 @@ public class ShipController : MonoBehaviour
     private float speedY;
     // private BaterryPoint point;
     public int energyCounter = 0;
-    public int shieldCounter = 3;
+    public int shieldCounter;
     [SerializeField]
     private GameObject playerShot;
     [SerializeField]
@@ -27,6 +27,7 @@ public class ShipController : MonoBehaviour
     {
         // point = GameObject.FindGameObjectWithTag("pointBatery").GetComponent<BaterryPoint>();
         currentShotTimer = shotTimer;
+        shieldCounter = 4;
     }
 
     // Update is called once per frame

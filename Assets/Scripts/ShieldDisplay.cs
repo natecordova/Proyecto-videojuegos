@@ -16,9 +16,9 @@ public class ShieldDisplay : MonoBehaviour
         GameObject ship = GameObject.Find("Ship");
         shipController = ship.GetComponent<ShipController>();
 
-        shieldMeterImg.overrideSprite = (Sprite)AssetDatabase.LoadAssetAtPath("Assets/Sprites/shield_meter/shield_3.png", typeof(Sprite));
+        
 
-        for (int i = 0; i <=  3; i++)
+        for (int i = 0; i <= 4; i++)
         {
             sprites.Add(i, (Sprite)AssetDatabase.LoadAssetAtPath("Assets/Sprites/shield_meter/shield_" + i + ".png", typeof(Sprite)));
         }
@@ -27,6 +27,8 @@ public class ShieldDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        Debug.Log("energy: " + shipController.shieldCounter);
         shieldMeterImg.overrideSprite = sprites[shipController.shieldCounter];
     }
 }
