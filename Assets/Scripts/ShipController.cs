@@ -16,7 +16,8 @@ public class ShipController : MonoBehaviour
     private GameObject playerShot;
     [SerializeField]
     private Transform attackPoint;
-
+    private float yNegative = 27f;
+    private float yPositive = -1.4f;
     public float shotTimer = 2f;
     private float currentShotTimer;
     private bool canShoot;
@@ -42,6 +43,14 @@ public class ShipController : MonoBehaviour
         {
             gameObject.transform.Translate(0, -speedY * Time.deltaTime, 0);
         }
+        if (gameObject.transform.position.y < -yNegative) {
+            transform.position = new Vector2(transform.position.x, -yNegative);
+        }
+        if (gameObject.transform.position.y > yPositive)
+        {
+            transform.position = new Vector2(transform.position.x, yPositive);
+        }
+
         /*else if (Input.GetKey("left"))
         {
             if (gameObject.transform.eulerAngles.z != 0)
