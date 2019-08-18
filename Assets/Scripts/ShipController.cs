@@ -52,6 +52,10 @@ public class ShipController : MonoBehaviour
             transform.position = new Vector2(transform.position.x, yPositive);
         }
 
+
+      
+
+
         /*else if (Input.GetKey("left"))
         {
             if (gameObject.transform.eulerAngles.z != 0)
