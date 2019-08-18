@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyShipController : MonoBehaviour
 {
@@ -106,10 +107,21 @@ public class EnemyShipController : MonoBehaviour
         {
             canShoot = false;
             shotTimer = 0f;
-            Instantiate(enemyShot, attackPoint.position, Quaternion.identity);
+
+            if (SceneManager.GetActiveScene().name == "level_1")
+            {
+                Instantiate(enemyShot, attackPoint.position, Quaternion.identity);
+            }
+            else if (SceneManager.GetActiveScene().name == "second_level")
+            {
+                Instantiate(enemyShot, attackPoint.position, Quaternion.Euler(0,0,15*attackPoint.localScale.x));
+                Instantiate(enemyShot, attackPoint.position, Quaternion.Euler(0, 0, -15 * attackPoint.localScale.x));
+
+                Instantiate(enemyShot, attackPoint.position, Quaternion.Euler(0, 0,0));
+            }
         }
     }
-
+   
     /*void ChangeLane()
     {
         currentTimeInLane += Time.deltaTime;
