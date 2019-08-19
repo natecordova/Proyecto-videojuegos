@@ -94,29 +94,38 @@ public class ShipController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "obstacle" || collision.transform.tag == "enemyShot") {
-            if (!recoveryState) {
+        if (collision.transform.tag == "obstacle" || collision.transform.tag == "enemyShot")
+        {
+            if (!recoveryState)
+            {
                 shieldCounter--;
 
-                if (shieldCounter == 0) {
+                if (shieldCounter == 0)
+                {
                     SceneManager.LoadScene("level_1");
                 }
-                else {
+                else
+                {
                     shipAnimator.Play("nave_flash");
                     recoveryState = true;
                     hitTime = Time.time;
                 }
             }
-        } else if (collision.transform.tag == "battery") {
+        }
+        else if (collision.transform.tag == "battery")
+        {
             Destroy(collision.gameObject);
             if (energyCounter < 10)
             {
                 energyCounter++;
             }
             Debug.Log("energy: " + energyCounter);
-        } else if (collision.transform.tag == "endOfLevel") {
+        }
+        else if (collision.transform.tag == "endOfLevel")
+        {
             SceneManager.LoadScene("second_level");
         }
+    }
 
     void Shoot()
     {
