@@ -114,8 +114,9 @@ public class ShipController : MonoBehaviour
                 energyCounter++;
             }
             Debug.Log("energy: " + energyCounter);
+        } else if (collision.transform.tag == "endOfLevel") {
+            SceneManager.LoadScene("second_level");
         }
-    }
 
     void Shoot()
     {

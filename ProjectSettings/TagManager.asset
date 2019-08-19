@@ -10,6 +10,7 @@ TagManager:
   - enemyShot
   - enemyShip
   - cerrar
+  - endOfLevel
   layers:
   - Default
   - TransparentFX
