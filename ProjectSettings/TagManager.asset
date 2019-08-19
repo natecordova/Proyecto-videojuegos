@@ -9,6 +9,7 @@ TagManager:
   - playerShot
   - enemyShot
   - enemyShip
+  - cerrar
   layers:
   - Default
   - TransparentFX
