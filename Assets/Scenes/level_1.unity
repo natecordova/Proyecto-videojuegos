@@ -847,6 +847,7 @@ MonoBehaviour:
     type: 3}
   attackPoint: {fileID: 1318535336}
   shotTimer: 0.5
+  shipAnimator: {fileID: 143734528}
 --- !u!60 &143734532
 PolygonCollider2D:
   m_ObjectHideFlags: 0

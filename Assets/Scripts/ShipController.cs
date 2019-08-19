@@ -21,6 +21,10 @@ public class ShipController : MonoBehaviour
     public float shotTimer = 2f;
     private float currentShotTimer;
     private bool canShoot;
+    public Animator shipAnimator;
+    private bool recoveryState;
+    private float hitTime;
+    private float deltaHitTime;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +39,14 @@ public class ShipController : MonoBehaviour
     {
         // Movimiento automático en eje X
         // gameObject.transform.Translate(speedX * Time.deltaTime, 0, 0);
+
+        // Salida del Recovery State
+        if (recoveryState) {
+            deltaHitTime = Time.time - hitTime;
+            if (deltaHitTime > 1.25f) {
+                recoveryState = false;
+            }
+        }
 
         if (Input.GetKey("up"))
         {
@@ -51,11 +63,6 @@ public class ShipController : MonoBehaviour
         {
             transform.position = new Vector2(transform.position.x, yPositive);
         }
-
-
-      
-
-
         /*else if (Input.GetKey("left"))
         {
             if (gameObject.transform.eulerAngles.z != 0)
@@ -88,13 +95,19 @@ public class ShipController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.tag == "obstacle" || collision.transform.tag == "enemyShot") {
-            shieldCounter--;
-            if (shieldCounter == 0)
-            {
-                SceneManager.LoadScene("level_1");
+            if (!recoveryState) {
+                shieldCounter--;
+
+                if (shieldCounter == 0) {
+                    SceneManager.LoadScene("level_1");
+                }
+                else {
+                    shipAnimator.Play("nave_flash");
+                    recoveryState = true;
+                    hitTime = Time.time;
+                }
             }
-        } else if (collision.transform.tag == "battery")
-        {
+        } else if (collision.transform.tag == "battery") {
             Destroy(collision.gameObject);
             if (energyCounter < 10)
             {
