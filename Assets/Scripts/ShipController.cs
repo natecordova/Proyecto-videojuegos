@@ -25,6 +25,10 @@ public class ShipController : MonoBehaviour
     private bool recoveryState;
     private float hitTime;
     private float deltaHitTime;
+    [SerializeField]
+    private string current_scene;
+    [SerializeField]
+    private string next_scene;
 
     // Start is called before the first frame update
     void Start()
@@ -94,7 +98,7 @@ public class ShipController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "obstacle" || collision.transform.tag == "enemyShot")
+        if (collision.transform.tag == "obstacle" || collision.transform.tag == "enemyShot" || collision.transform.tag == "enemyShip")
         {
             if (!recoveryState)
             {
@@ -102,7 +106,7 @@ public class ShipController : MonoBehaviour
 
                 if (shieldCounter == 0)
                 {
-                    SceneManager.LoadScene("level_1");
+                    SceneManager.LoadScene(current_scene);
                 }
                 else
                 {
@@ -123,7 +127,7 @@ public class ShipController : MonoBehaviour
         }
         else if (collision.transform.tag == "endOfLevel")
         {
-            SceneManager.LoadScene("second_level");
+            SceneManager.LoadScene(next_scene);
         }
     }
 
