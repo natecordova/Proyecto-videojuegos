@@ -1357,6 +1357,7 @@ MonoBehaviour:
   playerShot: {fileID: 0}
   attackPoint: {fileID: 0}
   shotTimer: 2
+  shipAnimator: {fileID: 0}
 --- !u!95 &568573985
 Animator:
   serializedVersion: 3
@@ -1432,7 +1433,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 568573981}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.1, y: -10.4, z: 0}
+  m_LocalPosition: {x: -25, y: -10, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2228,8 +2229,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 14, y: -10.2}
-  m_SizeDelta: {x: 107.74, y: 56.56}
+  m_AnchoredPosition: {x: 14.02, y: -10}
+  m_SizeDelta: {x: 123.7976, y: 55.7875}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &916670313
 GameObject:
@@ -2695,7 +2696,7 @@ Transform:
   m_GameObject: {fileID: 1064393753}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 14, y: -9.95, z: 0}
-  m_LocalScale: {x: 76.79945, y: 39.6835, z: 20}
+  m_LocalScale: {x: 88.5, y: 40, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
