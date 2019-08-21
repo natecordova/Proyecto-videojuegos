@@ -11,7 +11,7 @@ public class VariableSpeedObstacle : MonoBehaviour
     [SerializeField]
     private float x_bound;
     [SerializeField]
-    private float x_maxspeed_start;
+    private float x_maxspeed_start_pos;
     private float x_offset;
 
     // Start is called before the first frame update
@@ -23,7 +23,7 @@ public class VariableSpeedObstacle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.transform.position.x <= x_maxspeed_start) {
+        if (gameObject.transform.position.x <= x_maxspeed_start_pos) {
             x_speed = max_speed;
         }
         Move();

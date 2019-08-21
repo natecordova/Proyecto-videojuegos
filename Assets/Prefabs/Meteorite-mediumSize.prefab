@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   x_speed: 44
-  max_speed: 100
+  max_speed: 80
   x_bound: -45
-  x_maxspeed_start: 65
+  x_maxspeed_start_pos: 64
 --- !u!1001 &3905481028133844110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26,7 +26,7 @@ PrefabInstance:
     - target: {fileID: 3753548494189029829, guid: 98361bdc1da84244e95c2af03bca2a9b,
         type: 3}
       propertyPath: m_Name
-      value: Meteorite_5
+      value: Meteorite-mediumSize
       objectReference: {fileID: 0}
     - target: {fileID: 3753548494189029828, guid: 98361bdc1da84244e95c2af03bca2a9b,
         type: 3}
