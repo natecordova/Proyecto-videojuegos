@@ -469,7 +469,7 @@ MonoBehaviour:
   shotTimer: 0.5
   shipAnimator: {fileID: 143734528}
   current_scene: level_1
-  next_scene: second_level
+  next_scene: end
 --- !u!60 &143734532
 PolygonCollider2D:
   m_ObjectHideFlags: 0

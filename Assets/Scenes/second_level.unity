@@ -5421,7 +5421,7 @@ MonoBehaviour:
   shotTimer: 0.5
   shipAnimator: {fileID: 1503394702}
   current_scene: second_level
-  next_scene: credits
+  next_scene: end_2
 --- !u!95 &1503394702
 Animator:
   serializedVersion: 3
