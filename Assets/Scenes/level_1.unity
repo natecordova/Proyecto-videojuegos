@@ -466,6 +466,8 @@ MonoBehaviour:
   playerShot: {fileID: 1750605234919553398, guid: 89e0fd22dcb442643bda88bdcc67b5bb,
     type: 3}
   attackPoint: {fileID: 1318535336}
+  yNegative: 27
+  yPositive: -1.4
   shotTimer: 0.5
   shipAnimator: {fileID: 143734528}
   current_scene: level_1

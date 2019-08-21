@@ -5418,6 +5418,8 @@ MonoBehaviour:
   playerShot: {fileID: 1750605234919553398, guid: 89e0fd22dcb442643bda88bdcc67b5bb,
     type: 3}
   attackPoint: {fileID: 290014737}
+  yNegative: 22.5
+  yPositive: -1.33
   shotTimer: 0.5
   shipAnimator: {fileID: 1503394702}
   current_scene: second_level
@@ -5497,7 +5499,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1503394698}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25, y: -10, z: 0}
+  m_LocalPosition: {x: -25, y: -23.5, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 290014737}

@@ -16,8 +16,10 @@ public class ShipController : MonoBehaviour
     private GameObject playerShot;
     [SerializeField]
     private Transform attackPoint;
-    private float yNegative = 27f;
-    private float yPositive = -1.4f;
+    [SerializeField]
+    private float yNegative;
+    [SerializeField]
+    private float yPositive;
     public float shotTimer = 2f;
     private float currentShotTimer;
     private bool canShoot;
