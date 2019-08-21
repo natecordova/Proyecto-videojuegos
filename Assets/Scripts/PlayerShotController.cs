@@ -21,6 +21,14 @@ public class PlayerShotController : MonoBehaviour
         Move();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.tag == "obstacle" || collision.transform.tag == "enemyShip")
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
     void Move()
     {
         x_offset = Time.deltaTime * x_speed;
